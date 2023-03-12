@@ -15,6 +15,7 @@ uint32_t vertex_amount;
 uint32_t edges_amount;
 Graph graph;
 
+// for converting vertex id to name
 void LoadNaming() {
     std::ifstream file_in(file_naming_name);
 
@@ -26,6 +27,7 @@ void LoadNaming() {
     }
 };
 
+// soo basic, soo obviously
 void LoadGraph() {
     std::ifstream file_in(file_graph_name);
     if (!file_in.is_open())
@@ -47,6 +49,8 @@ const uint32_t kInfinity = -1;
 
 std::vector<std::vector<uint32_t>> dist;
 
+// Floyd Warshall - basic
+// but i ignore infinity distances, because of islands
 void FillDist() {
     dist.resize(vertex_amount + 1, std::vector<uint32_t>(vertex_amount + 1, kInfinity));
 
@@ -67,8 +71,10 @@ void FillDist() {
             }
 }
 
+
 std::vector<uint32_t> eccentricity;
 
+// biggest of distances
 void FindEccentricity() {
     eccentricity.resize(vertex_amount + 1, kInfinity);
 
@@ -90,6 +96,9 @@ int main() {
     FillDist();
     FindEccentricity();
     /*
+    uncomment if you want to see all eccentricity
+    i've launched it already, i analyzed it, and radius is 5
+
     for (uint32_t v = 1; v <= vertex_amount; v++) {
             std::cout << naming[v] << " " << eccentricity[v] << "\n";
     }
