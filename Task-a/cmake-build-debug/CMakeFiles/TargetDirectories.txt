@@ -1,0 +1,3 @@
+/home/forva/CLionProjects/Diskra/Graphs/Task-a/cmake-build-debug/CMakeFiles/Task_a.dir
+/home/forva/CLionProjects/Diskra/Graphs/Task-a/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/forva/CLionProjects/Diskra/Graphs/Task-a/cmake-build-debug/CMakeFiles/rebuild_cache.dir
